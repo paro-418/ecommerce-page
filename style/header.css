@@ -47,27 +47,3 @@
   opacity: 1;
 }
 
-.nav__btn-cart {
-  border: none;
-  background-color: transparent;
-  position: relative;
-  width: 2.4rem;
-}
-
-.nav__btn-cart::before {
-  content: "15";
-  position: absolute;
-  width: 80%;
-  height: 70%;
-  border-radius: 50%;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--primary-color);
-  right: -25%;
-  top: -25%;
-  padding: 0.8rem 1rem;
-  font-size: 1rem;
-  display: none;
-}

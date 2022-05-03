@@ -29,9 +29,7 @@
             <img src="images/logo.svg" alt="company logo" />
           </div>
           <ul class="nav__ul">
-            <li class="nav__li">
-              <a href="#" class="nav__li__a">Collections</a>
-            </li>
+            <li class="nav__li"><a href="#" class="nav__li__a">Collections</a></li>
             <li class="nav__li"><a href="#" class="nav__li__a">Men</a></li>
             <li class="nav__li"><a href="#" class="nav__li__a">Women</a></li>
             <li class="nav__li"><a href="#" class="nav__li__a">About</a></li>
@@ -40,11 +38,12 @@
         </div>
         <div class="nav__cart__profile">
           <div class="cart">
-            <button class="nav__btn-cart">
+              <a class="nav__btn-cart" href="#inside-cart">
               <img src="images/icon-cart.svg" alt="cart" class="nav__cart" />
-            </button>
+              </a>
+            <input type="checkbox" name="cart-checkbox" class="cart-checkbox" id="cart-checkbox">
 
-            <div class="inside-cart no-items hide">
+            <div class="inside-cart yes-items" id="inside-cart">
               <div class="inside-cart-header">
                 <h2 class="inside-cart-heading">Cart</h2>
               </div>
