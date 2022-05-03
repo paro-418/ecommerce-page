@@ -1,44 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | E-commerce product page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | E-commerce product page</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <div class="nav__links-logo">
+          <div class="nav__logo-block">
+            <img src="images/logo.svg" alt="company logo" />
+          </div>
+          <ul class="nav__ul">
+            <li class="nav__li">
+              <a href="#" class="nav__li__a">Collections</a>
+            </li>
+            <li class="nav__li"><a href="#" class="nav__li__a">Men</a></li>
+            <li class="nav__li"><a href="#" class="nav__li__a">Women</a></li>
+            <li class="nav__li"><a href="#" class="nav__li__a">About</a></li>
+            <li class="nav__li"><a href="#" class="nav__li__a">Contact</a></li>
+          </ul>
+        </div>
+        <div class="nav__cart__profile">
+          <div class="cart">
+            <button class="nav__btn-cart">
+              <img src="images/icon-cart.svg" alt="cart" class="nav__cart" />
+            </button>
 
-  Collections
-  Men
-  Women
-  About
-  Contact
-
-  Sneaker Company
-
-  Fall Limited Edition Sneakers
-
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+            <div class="inside-cart no-items hide">
+              <div class="inside-cart-header">
+                <h2 class="inside-cart-heading">Cart</h2>
+              </div>
+              <div class="cart-item-box">
+                <p class="empty-message">Your cart is empty.</p>
+                <div class="cart-items">
+                  <img
+                    src="images/image-product-1-thumbnail.jpg"
+                    alt="product thumbnail"
+                    class="cart-item-image"
+                  />
+                  <div class="cart-item-info">
+                    <h4 class="cart-item-name">Fall Limited Edition Sneaker</h4>
+                    &dollar;<span class="current-price">125</span> x
+                    <span class="items-bought">3</span>
+                    <span class="final-price">&dollar;375.00</span> <img src="images/icon-delete.svg" alt="delete icon" class="delete-icon">
+                  </div>
+                </div>
+                <button class="checkout">Checkout</button>
+              </div>
+            </div>
+          </div>
+          <div class="profile">
+            <img
+              src="images/image-avatar.png"
+              alt="user profile"
+              class="profile-image"
+            />
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="main">
+      <section class="main__section-left">
+        <div class="product-image-block">
+          <img src="images/image-product-1.jpg" alt="" class="product-image" />
+        </div>
+        <div class="thumbnails-all">
+          <button class="thumbnail-1 btn-thumbnail">
+            <img
+              src="images/image-product-1-thumbnail.jpg"
+              alt="product thumbnail"
+              class="product-thumbnail-1 product-thumbnail"
+            />
+          </button>
+          <button class="thumbnail-2 btn-thumbnail">
+            <img
+              src="images/image-product-2-thumbnail.jpg"
+              alt="product thumbnail"
+              class="product-thumbnail-2 product-thumbnail"
+            />
+          </button>
+          <button class="thumbnail-3 btn-thumbnail">
+            <img
+              src="images/image-product-3-thumbnail.jpg"
+              alt="product thumbnail"
+              class="product-thumbnail-3 product-thumbnail"
+            />
+          </button>
+          <button class="thumbnail-4 btn-thumbnail">
+            <img
+              src="images/image-product-4-thumbnail.jpg"
+              alt="product thumbnail"
+              class="product-thumbnail-4 product-thumbnail"
+            />
+          </button>
+        </div>
+      </section>
+      <section class="main__section-right">
+        <h3 class="secondary-heading">sneaker company</h3>
+        <h1 class="primary-heading">fall limited edition sneakers</h1>
+        <p class="product-description">
+          These low-profile sneakers are your perfect casuel wear comapanion.
+          Featuring a durable rubber outer sole, they'll withstand everything
+          the weather can offer.
+        </p>
+        <div class="price-block">
+          <span class="price">&dollar;125.00</span>
+          <span class="discount">50&percnt;</span>
+          <span class="original-price">&dollar;250.00</span>
+        </div>
+        <div class="product-counter">
+          <div class="inc-dec">
+            <span class="subtract counter-span">-</span>
+            <span class="count counter-span">0</span>
+            <span class="add counter-span">+</span>
+          </div>
+          <button class="add-to-cart">
+            <svg
+              width="22"
+              class="cart-in-btn"
+              height="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+              />
+            </svg>
+            Add to cart
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
