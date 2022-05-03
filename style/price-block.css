@@ -1,0 +1,79 @@
+/* ----price block----- */
+
+.price-block {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 38%;
+}
+.price {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.discount {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  padding: 0.4rem;
+}
+.original-price {
+  position: absolute;
+  bottom: -3.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--grey);
+  text-decoration-line: line-through;
+}
+
+/* ---product counter--- */
+.product-counter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8rem;
+}
+.inc-dec {
+  background-color: var(--light-greyish-blue);
+}
+.counter-span {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1rem 1.5rem;
+  display: inline-block;
+}
+
+.subtract,
+.add {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.add-to-cart {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 1rem;
+  width: 60%;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0.6rem 2.1rem -0.6rem var(--primary-color);
+}
+
+.add-to-cart:active,
+.add-to-cart:hover,
+.add-to-cart:focus {
+  opacity: 0.7;
+}
+
+.cart-in-btn {
+  fill: #fff;
+  transform: scale(0.8);
+  margin-right: 1rem;
+}

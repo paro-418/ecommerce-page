@@ -17,7 +17,7 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="main.css" />
 
     <title>Frontend Mentor | E-commerce product page</title>
   </head>
@@ -60,7 +60,12 @@
                     <h4 class="cart-item-name">Fall Limited Edition Sneaker</h4>
                     &dollar;<span class="current-price">125</span> x
                     <span class="items-bought">3</span>
-                    <span class="final-price">&dollar;375.00</span> <img src="images/icon-delete.svg" alt="delete icon" class="delete-icon">
+                    <span class="final-price">&dollar;375.00</span>
+                    <img
+                      src="images/icon-delete.svg"
+                      alt="delete icon"
+                      class="delete-icon"
+                    />
                   </div>
                 </div>
                 <button class="checkout">Checkout</button>
@@ -78,9 +83,15 @@
       </nav>
     </header>
     <main class="main">
-      <section class="main__section-left">
+      <section class="main__section-left" id="main__section-left">
         <div class="product-image-block">
-          <img src="images/image-product-1.jpg" alt="" class="product-image" />
+          <a class="btn-product-image" href="#popup">
+            <img
+              src="images/image-product-1.jpg"
+              alt=""
+              class="product-image"
+            />
+          </a>
         </div>
         <div class="thumbnails-all">
           <button class="thumbnail-1 btn-thumbnail">
@@ -111,6 +122,61 @@
               class="product-thumbnail-4 product-thumbnail"
             />
           </button>
+        </div>
+
+        <div class="popup" id="popup">
+          <div class="popup-image-block">
+            <img
+              src="images/image-product-1.jpg"
+              alt="product image"
+              class="popup-product-image"
+            />
+
+            <a class="close-btn" href="#main__section-left">
+              <svg width="14" height="15" fill="#fff">
+                <path
+                  d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+                />
+              </svg>
+            </a>
+            <span class="arrow-left arrow"
+              ><img src="images/icon-previous.svg" alt="previous image"
+            /></span>
+            <span class="arrow-right arrow"
+              ><img src="images/icon-next.svg" alt="next image"
+            /></span>
+          </div>
+
+          <div class="popup-thumbnails-all">
+            <button class="popup-thumbnail-1 popup-btn-thumbnail">
+              <img
+                src="images/image-product-1-thumbnail.jpg"
+                alt="product thumbnail"
+                class="popup-product-thumbnail-1 popup-product-thumbnail"
+              />
+            </button>
+            <button class="popup-thumbnail-2 popup-btn-thumbnail">
+              <img
+                src="images/image-product-2-thumbnail.jpg"
+                alt="product thumbnail"
+                class="popup-product-thumbnail-2 popup-product-thumbnail"
+              />
+            </button>
+            <button class="popup-thumbnail-3 popup-btn-thumbnail">
+              <img
+                src="images/image-product-3-thumbnail.jpg"
+                alt="product thumbnail"
+                class="popup-product-thumbnail-3 popup-product-thumbnail"
+              />
+            </button>
+            <button class="popup-thumbnail-4 popup-btn-thumbnail">
+              <img
+                src="images/image-product-4-thumbnail.jpg"
+                alt="product thumbnail"
+                class="popup-product-thumbnail-4 popup-product-thumbnail"
+              />
+            </button>
+          </div>
         </div>
       </section>
       <section class="main__section-right">

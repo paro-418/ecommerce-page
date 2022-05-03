@@ -1,0 +1,123 @@
+.popup {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right,hsla(0, 0%, 0%, 0.756) , hsla(0, 0%, 0%, 0.756));
+  
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.popup:target{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+
+.popup-image-block {
+  position: relative;
+  width: 55vh;
+  height: 55vh;
+}
+
+.popup-product-image {
+  border-radius: 2rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+
+/* -----arrow button----------- */
+
+.arrow {
+  position: absolute;
+  font-size: 8rem;
+  z-index: 200;
+  top: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.arrow-left {
+  left: 0;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.arrow-right {
+  transform: translateX(50%) translateY(-50%);
+  right: 0;
+}
+
+
+
+/* ------thumbnails------------- */
+
+
+.popup-thumbnails-all{
+    /* border: 2px solid red; */
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 2rem;
+    margin-top: 3rem;
+}
+
+.popup-btn-thumbnail{
+    border: 3px solid transparent;
+    overflow: hidden;
+    border-radius: 2rem;
+}
+
+
+.popup-btn-thumbnail:focus, .popup-btn-thumbnail:active,.popup-btn-thumbnail:hover {
+  border: 3px solid var(--primary-color);
+  opacity: 0.7;
+}
+
+.popup-product-thumbnail{
+    width: 100%;
+    display: block;
+}
+
+/* ------close button------ */
+
+.close-btn{
+    padding: 0.5rem;
+    position: absolute;
+    right: 0;
+    top: -5rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+}
+
+.close-btn:active, .close-btn:focus{
+    border: 2px solid red;
+}
+
+.close-btn:hover  svg{
+    fill: var(--primary-color);
+}
+
+.close-btn svg{
+    transform: scale(1.5);
+}
+
+

@@ -1,0 +1,21 @@
+/* ----profile----  */
+
+.nav__cart__profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__cart,
+.profile-image,
+.nav__li {
+  cursor: pointer;
+}
+.profile {
+  flex-basis: 40%;
+}
+
+.profile-image {
+  width: 100%;
+  display: inline-block;
+}
