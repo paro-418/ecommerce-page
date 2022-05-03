@@ -50,8 +50,15 @@ html {
 
 body {
   font-family: "Kumbh Sans", sans-serif;
-  padding: 0 25vh;
+  padding: 0 25vh 7rem 25vh;
   margin: 0 auto;
   position: relative;
+}
+
+@media screen and (max-width: 1200px){
+  body{
+    border: 3px solid red;
+    padding: 0 6vh 6vw 6vh;
+  }
 }
 
