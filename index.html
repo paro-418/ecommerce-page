@@ -92,7 +92,7 @@
                     />
                   </div>
                 </div>
-                <button class="checkout">Checkout</button>
+                <button class="checkout" id="checkout">Checkout</button>
               </div>
             </div>
           </div>
@@ -114,6 +114,7 @@
               src="images/image-product-1.jpg"
               alt=""
               class="product-image"
+              id="main-product-image"
             />
           </a>
 
@@ -161,6 +162,7 @@
               src="images/image-product-1.jpg"
               alt="product image"
               class="popup-product-image"
+              id="popup-product-image"
             />
 
             <a class="close-btn" href="#main__section-left">
@@ -170,37 +172,37 @@
                 />
               </svg>
             </a>
-            <span class="arrow-left arrow"
+            <span class="arrow-left arrow" id="popup-prev-arrow"
               ><img src="images/icon-previous.svg" alt="previous image"
             /></span>
-            <span class="arrow-right arrow"
+            <span class="arrow-right arrow" id="popup-next-arrow"
               ><img src="images/icon-next.svg" alt="next image"
             /></span>
           </div>
 
           <div class="popup-thumbnails-all">
-            <button class="popup-thumbnail-1 popup-btn-thumbnail">
+            <button class="popup-thumbnail-1 popup-btn-thumbnail" id="popup-thumbnail-1">
               <img
                 src="images/image-product-1-thumbnail.jpg"
                 alt="product thumbnail"
                 class="popup-product-thumbnail-1 popup-product-thumbnail"
               />
             </button>
-            <button class="popup-thumbnail-2 popup-btn-thumbnail">
+            <button class="popup-thumbnail-2 popup-btn-thumbnail" id="popup-thumbnail-2">
               <img
                 src="images/image-product-2-thumbnail.jpg"
                 alt="product thumbnail"
                 class="popup-product-thumbnail-2 popup-product-thumbnail"
               />
             </button>
-            <button class="popup-thumbnail-3 popup-btn-thumbnail">
+            <button class="popup-thumbnail-3 popup-btn-thumbnail" id="popup-thumbnail-3">
               <img
                 src="images/image-product-3-thumbnail.jpg"
                 alt="product thumbnail"
                 class="popup-product-thumbnail-3 popup-product-thumbnail"
               />
             </button>
-            <button class="popup-thumbnail-4 popup-btn-thumbnail">
+            <button class="popup-thumbnail-4 popup-btn-thumbnail" id="popup-thumbnail-4">
               <img
                 src="images/image-product-4-thumbnail.jpg"
                 alt="product thumbnail"
@@ -225,11 +227,11 @@
         </div>
         <div class="product-counter">
           <div class="inc-dec">
-            <span class="subtract counter-span">-</span>
-            <span class="count counter-span">0</span>
-            <span class="add counter-span">+</span>
+            <span class="subtract counter-span" id="subtract">-</span>
+            <span class="count counter-span" id="count-items">0</span>
+            <span class="add counter-span" id="add">+</span>
           </div>
-          <button class="add-to-cart">
+          <button class="add-to-cart" id="add-to-cart">
             <svg
               width="22"
               class="cart-in-btn"
@@ -245,5 +247,6 @@
         </div>
       </section>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
