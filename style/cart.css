@@ -10,8 +10,8 @@
 }
 
 .cart-checkbox:checked + .inside-cart {
-  display: block;
   /*      to hide and display cart         */
+  display: block;
 }
 
 .nav__btn-cart {
@@ -92,8 +92,7 @@
   z-index: 5;
   background-color: #fff;
   position: absolute;
-  right: -600%;
-  top: 270%;
+  transform: translateX(-65%) translateY(10%);
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 2.5rem 3.6rem -0.5rem rgba(0, 0, 0, 0.25);
@@ -172,9 +171,8 @@
   }
 
   .inside-cart {
-    /* left: 0; */
-    right: -258%;
     width: 95vw;
+    transform: translateX(-71%) translateY(15%);
   }
 
   .empty-message{
@@ -204,7 +202,6 @@
   }
 
   .no-items .cart-item-box {
-
   height: 80%;
 }
 }

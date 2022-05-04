@@ -12,6 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .menu {
@@ -53,7 +54,7 @@
   position: absolute;
   width: 100%;
   height: 0.4rem;
-  bottom: -4.5rem;
+  bottom: -4.7rem;
   left: 0;
   background-color: var(--primary-color);
   opacity: 0;
