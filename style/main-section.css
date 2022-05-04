@@ -1,18 +1,10 @@
- /*--------------main seciton--------------- */
+/*--------------main seciton--------------- */
 
 .main {
   display: flex;
   column-gap: 12rem;
   margin-top: 8rem;
   padding: 0 4rem;
-}
-
-@media screen and (max-width:1200px){
-  .main{
-    border: 3px solid red;
-    margin-top: 4rem;
-    column-gap: 10rem;
-  }
 }
 
 .main__section-left {
@@ -25,6 +17,10 @@
 }
 
 /*----------- main-section-left------- */
+
+.mob-arrow {
+  display: none; /* hiding prev and next arrow in desktop view inside main product image */
+}
 .product-image-block {
   border-radius: 2.5rem;
   overflow: hidden;
@@ -36,20 +32,18 @@
   display: block;
 }
 
-.btn-product-image{
+.btn-product-image {
   border-radius: 2.5rem;
   cursor: pointer;
   border: none;
   overflow: hidden;
-
 }
-
 
 .thumbnails-all {
   display: flex;
   column-gap: 3rem;
-    padding: 3rem 0;
-  }
+  padding: 3rem 0;
+}
 
 .btn-thumbnail {
   border: 3px solid transparent;
@@ -90,4 +84,86 @@
   font-size: 1.4rem;
   line-height: 1.6;
   font-weight: 600;
+}
+
+
+
+/* ---media querries------- */
+
+@media screen and (max-width: 1200px) {
+  .main {
+    margin-top: 4rem;
+    column-gap: 10rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .main {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+
+  .main__section-left {
+    width: 100%;
+  }
+
+  
+  .btn-product-image,
+  .product-image-block {
+    border-radius: 0;
+  }
+
+  .thumbnails-all {
+    display: none;
+  }
+  
+  .product-image-block{
+    position: relative;
+  }
+
+  .product-image-block, .product-image, .btn-product-image{
+    cursor: default;
+  }
+
+  .mob-arrow {
+    display: inline-block; /* unhiding prev and next arrow in desktop view inside main product image */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    width: 6rem;
+    height:6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  
+  .mob-arrow-left{
+    left: 1rem;
+  }
+  .mob-arrow-right{
+    right: 1rem;
+  }
+
+  
+  /* ---main secton right---- */
+  .main__section-right {
+  padding: 0 3rem;
+  }
+
+  .secondary-heading{
+    font-size: 2rem;
+  }
+
+  .primary-heading{
+    margin-top: 2rem;
+  }
+  
+  .product-description{
+    font-size: 2.3rem;
+
+  }
 }

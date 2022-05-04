@@ -12,10 +12,23 @@
   cursor: pointer;
 }
 .profile {
-  flex-basis: 40%;
+  flex-basis: 45%;
+  /* border: 2px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile-image {
+  /* border: 2px solid black; */
   width: 100%;
   display: inline-block;
+  right: 0;
+
+}
+
+@media screen and (max-width: 400px) {
+  .profile-image {
+    width: 70%;
+  }
 }

@@ -57,8 +57,18 @@ body {
 
 @media screen and (max-width: 1200px){
   body{
-    border: 3px solid red;
     padding: 0 6vh 6vw 6vh;
+  }
+}
+
+@media  screen and (max-width: 400px)  {
+  body{
+    padding: 0;
+    margin: 0;
+  }
+
+  html{
+    font-size: 40%;
   }
 }
 

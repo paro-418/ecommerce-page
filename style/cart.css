@@ -9,8 +9,9 @@
   cursor: pointer;
 }
 
-.cart-checkbox:checked + .inside-cart {    
-  display: none;               /*      to hide and display cart         */
+.cart-checkbox:checked + .inside-cart {
+  display: block;
+  /*      to hide and display cart         */
 }
 
 .nav__btn-cart {
@@ -97,8 +98,7 @@
   border-radius: 1rem;
   box-shadow: 0 2.5rem 3.6rem -0.5rem rgba(0, 0, 0, 0.25);
   width: 25vw;
-  /* display: flex; */
-  display: none;
+  display: none;  /*   initial hide condition for cart */
   flex-direction: column;
 }
 .inside-cart-header {
@@ -163,4 +163,48 @@
 .checkout:active,
 .checkout:focus {
   opacity: 0.7;
+}
+
+@media screen and (max-width: 400px) {
+  .nav__btn-cart,
+  .cart-checkbox {
+    margin-left: 2rem;
+  }
+
+  .inside-cart {
+    /* left: 0; */
+    right: -258%;
+    width: 95vw;
+  }
+
+  .empty-message{
+    font-size: 2.5rem;
+  }
+
+  .yes-items .cart-items {
+    margin-bottom: 0.9rem;
+    height: calc(var(--cart-items-height)+ 1rem);
+  }
+
+  .checkout{
+    margin-top: 1rem;
+  }
+
+  .cart-item-name{
+    font-size: 2.2rem;
+  }
+
+  .current-price,.items-bought{
+    font-size: 2rem;
+  }
+
+  .cart-item-info .final-price{
+    font-size: 2rem;
+    margin-left: 2rem;
+  }
+
+  .no-items .cart-item-box {
+
+  height: 80%;
+}
 }

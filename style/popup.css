@@ -117,3 +117,8 @@
 }
 
 
+@media screen and (max-width:400px) {
+  .popup{
+    display: none;
+  }
+}

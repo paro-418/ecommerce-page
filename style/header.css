@@ -5,16 +5,33 @@
   border-bottom: 1px solid var(--greyish-blue);
 }
 
+.mob-nav {
+  display: none;
+}
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
+.menu {
+  display: none;
+}
+
 .nav__links-logo {
   display: flex;
   justify-content: space-between;
   flex-basis: 55%;
 }
+
+.ul-back {
+  display: none;
+}
+
+.ul-close-btn {
+  display: none;
+}
+
 .nav__ul {
   display: flex;
   list-style: none;
@@ -47,3 +64,109 @@
   opacity: 1;
 }
 
+@media screen and (max-width: 400px) {
+  .header {
+    padding-top: 1rem;
+  }
+  .menu {
+    display: block;
+    cursor: pointer;
+  }
+
+  .menu-link {
+    margin-left: 1.5rem;
+    padding: 0.2rem;
+    order: -1;
+  }
+
+  .logo-image {
+    transform: scale(0.7);
+  }
+
+  .nav {
+    position: relative;
+  }
+
+  .nav__links-logo {
+    flex-basis: 40%;
+  }
+
+  .nav__cart__profile {
+    flex-basis: 30%;
+  }
+
+  /* ------side navigation---------- */
+
+  .mob-nav-close {
+    display: inline-block;
+    margin: 3rem 0 0 3rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mob-nav:target {
+    width: 0vw;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  .mob-nav-close,
+  .mob-nav-close:focus svg {
+    fill: var(--primary-color);
+  }
+
+  .nav__ul {
+    display: none;
+  }
+
+  .mob-nav {
+    display: block;
+    position: absolute;
+    z-index: 600;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+      to right,
+      #fff 60%,
+      var(--black-opacity) 60%
+    );
+
+    /*  --normal consition--*/
+    width: 0vw;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  .mob-nav:target {
+    width: 100vw;
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+  }
+
+  .mob-ul {
+    width: 60%;
+    height: 23%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 2.7rem;
+    margin-top: 12rem;
+  }
+
+  .mob-li {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .mob-li-a {
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--black-opacity);
+    margin-left: 3rem;
+  }
+}
