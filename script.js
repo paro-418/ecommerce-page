@@ -2,8 +2,8 @@
 
 // VARIABLES
 
-let currentThumbnailNo = 1;
-let previousThumbnailNo = 1;
+let currentThumbnailNo = 1;  /* to keep track of current thumnail displaying */
+let previousThumbnailNo = 1; /* to keep track of previous thumbnail displaying */
 
 // -----------selecting all elements here---------
 
@@ -21,13 +21,10 @@ const addToCart = document.getElementById("add-to-cart");
 // POPUP ELEMENTS
 
 const popupBtnThumbnail = document.querySelectorAll(".popup-btn-thumbnail");
-// console.log(popupBtnThumbnail[3]);
 const thumbnailsLength = popupBtnThumbnail.length;
 const popupProductImage = document.getElementById("popup-product-image");
 const popupPrevArrow = document.getElementById("popup-prev-arrow");
 const popupNextArrow = document.getElementById("popup-next-arrow");
-
-
 
 // ADDING EVENT LISTENERS TO EACH THUMBNAILS
 
@@ -39,18 +36,36 @@ btnThumbnail.forEach(function (btn, thumbnailIndex) {
   });
 });
 
+
+
 // event listener in popup thumbnails
 popupBtnThumbnail.forEach(function (btn, popupThumbnailIndex) {
   btn.addEventListener("click", function () {
+    // currentThumbnailno variable updating contiuously 
+    // while using both arrow & thumnails to preview image
+    previousThumbnailNo = currentThumbnailNo;
+    currentThumbnailNo = popupThumbnailIndex + 1;
+
+    // creating address of images
     const addressToPut = `images/image-product-${popupThumbnailIndex + 1}.jpg`;
+
+    // changing photo's source to preview as main image
     changePopupPhotoSource(popupProductImage, addressToPut);
+
+    // changing opacity of selected thumbnail
+    changeOpacity(currentThumbnailNo,previousThumbnailNo);
   });
 });
+
+
+
 
 // event listener on previous and next button in popup mode
 
 popupPrevArrow.addEventListener("click", function () {
   if (currentThumbnailNo === 1) return;
+
+  // keeping track of previously diplayed thumnail as main photo   
   previousThumbnailNo = currentThumbnailNo;
   --currentThumbnailNo;
 
@@ -62,8 +77,12 @@ popupPrevArrow.addEventListener("click", function () {
   changePopupPhotoSource(popupProductImage, addressToPut);
 });
 
+
+
 popupNextArrow.addEventListener("click", function () {
   if (currentThumbnailNo === 4) return;
+
+  // keeping track of previously thumbnail displayed as main photo   
   previousThumbnailNo = currentThumbnailNo;
   ++currentThumbnailNo;
 
@@ -73,6 +92,9 @@ popupNextArrow.addEventListener("click", function () {
   changeOpacity(currentThumbnailNo, previousThumbnailNo);
   changePopupPhotoSource(popupProductImage, addressToPut);
 });
+
+
+
 
 // FUNCTIONS
 
@@ -94,14 +116,14 @@ const changePopupPhotoSource = function (
 //   -- CHANGE OPACITY
 
 const changeOpacity = function (
-  currentThumbnailOpacity,
-  previousThumbnailOpacity
+  currentlyShowingThumbnail,
+  previouslyShownThumbnail
 ) {
   const toCurrLowOpacity = document.getElementById(
-    `popup-thumbnail-${currentThumbnailOpacity}`
+    `popup-thumbnail-${currentlyShowingThumbnail}`
   );
   const toPrevHighOpacity = document.getElementById(
-    `popup-thumbnail-${previousThumbnailOpacity}`
+    `popup-thumbnail-${previouslyShownThumbnail}`
   );
 
   toCurrLowOpacity.style.opacity = "0.7";
