@@ -5,6 +5,7 @@
 let isItemsExistInCart = false;
 let orderInCart = 0;
 let noOfPairsSelected = 0;
+let totalNoOfItemsInCart = 0;
 
 // MAIN-SECTION-RIGHT-ELEMENTS
 const counterSpanEl = document.querySelectorAll(".counter-span");
@@ -48,8 +49,10 @@ const changeInsideCartClass = function (presentOrNot) {
 };
 
 const countNoOfpairSelected = function (spanTapped) {
+  // if - button is pressed
   if (spanTapped === 0) --noOfPairsSelected;
 
+  // if +button is pressed
   if (spanTapped === 2) ++noOfPairsSelected;
 
   // ensuring selected item must not be negative
@@ -83,7 +86,35 @@ addToCartBtn.addEventListener("click", function (e) {
 
   if (+countItemEl.textContent > 0) {
     cartItemBox.insertAdjacentHTML("afterbegin", htmlToInsert);
+    ++totalNoOfItemsInCart;
     isItemsExistInCart = true;
   }
+
+  const htmlJustInserted = document.querySelector(
+    ".cart-item-info .delete-icon"
+  );
+
+  // adding evetlistener on each created delete icon image
+  addEventInCartItems(htmlJustInserted);
+
+  // changing class of inside-cart
   changeInsideCartClass(isItemsExistInCart);
 });
+
+// EVENT-LISTENER ON CART IMAGE
+
+const addEventInCartItems = function (itemJustInserted) {
+  itemJustInserted.addEventListener("click", function (e) {
+    e.preventDefault();
+    const toBeDeleted = this.parentElement.parentElement;
+    toBeDeleted.remove(); // removing items from cart
+
+    // updating no of items present in cart
+    --totalNoOfItemsInCart;
+
+    // if no element present in cart then again apply no-items class
+    if (totalNoOfItemsInCart === 0) {
+      changeInsideCartClass(false);
+    }
+  });
+};
