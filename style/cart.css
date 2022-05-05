@@ -24,7 +24,8 @@
 }
 
 .nav__btn-cart::before {
-  content: "15";
+  counter-reset: temp var(--pseudo-content);
+  content: counter(temp);
   position: absolute;
   width: 80%;
   height: 70%;
@@ -38,7 +39,7 @@
   top: -25%;
   padding: 0.8rem 1rem;
   font-size: 1rem;
-  display: none;
+  opacity: var(--pseudo-opacity);
 }
 
 /* ------when no items in cart---- */

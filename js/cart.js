@@ -1,5 +1,9 @@
 "use strict";
 
+// ROOT VARIABLES
+
+// const root = document.querySelector(':root');
+
 // VARIABLES
 
 let isItemsExistInCart = false;
@@ -94,12 +98,27 @@ addToCartBtn.addEventListener("click", function (e) {
     ".cart-item-info .delete-icon"
   );
 
+  // updating content of pseudo element
+  changePseudoContent();
+
   // adding evetlistener on each created delete icon image
   addEventInCartItems(htmlJustInserted);
 
   // changing class of inside-cart
   changeInsideCartClass(isItemsExistInCart);
 });
+
+const changePseudoContent = function () {
+  // changing opacity of pseudo element
+  totalNoOfItemsInCart == 0
+    ? document.documentElement.style.setProperty("--pseudo-opacity", "0")
+    : document.documentElement.style.setProperty("--pseudo-opacity", "1");
+
+  document.documentElement.style.setProperty(
+    "--pseudo-content",
+    totalNoOfItemsInCart
+  );
+};
 
 // EVENT-LISTENER ON CART IMAGE
 
@@ -111,6 +130,9 @@ const addEventInCartItems = function (itemJustInserted) {
 
     // updating no of items present in cart
     --totalNoOfItemsInCart;
+
+    // updating content of pseudo element
+    changePseudoContent();
 
     // if no element present in cart then again apply no-items class
     if (totalNoOfItemsInCart === 0) {

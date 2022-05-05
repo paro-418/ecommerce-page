@@ -12,6 +12,11 @@
   /* cart-items height */
   --cart-items-height: 6rem;
   --no-of-items-in-cart: 10;
+
+  /* Pseudo element content */
+
+  --pseudo-content : 0;
+  --pseudo-opacity: 0;
 }
 
 /* utility classes */
