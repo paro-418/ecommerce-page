@@ -67,8 +67,7 @@
 }
 
 .add-to-cart:active,
-.add-to-cart:hover,
-.add-to-cart:focus {
+.add-to-cart:hover{
   opacity: 0.7;
 }
 

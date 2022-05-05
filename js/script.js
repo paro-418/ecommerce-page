@@ -13,11 +13,6 @@ let mobCurrentMainPhoto = 1;
 const btnThumbnail = document.querySelectorAll(".btn-thumbnail");
 const mainProductImage = document.getElementById("main-product-image");
 
-// MAIN-SECTION-RIGHT-ELEMENTS
-const subtractItem = document.getElementById("subtract");
-const addItem = document.getElementById("add");
-const countItem = document.getElementById("count-items");
-const addToCart = document.getElementById("add-to-cart");
 
 // POPUP ELEMENTS
 

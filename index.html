@@ -72,26 +72,9 @@
               <div class="inside-cart-header">
                 <h2 class="inside-cart-heading">Cart</h2>
               </div>
-              <div class="cart-item-box">
+              <div class="cart-item-box" id="cart-item-box">
                 <p class="empty-message">Your cart is empty.</p>
-                <div class="cart-items">
-                  <img
-                    src="images/image-product-1-thumbnail.jpg"
-                    alt="product thumbnail"
-                    class="cart-item-image"
-                  />
-                  <div class="cart-item-info">
-                    <h4 class="cart-item-name">Fall Limited Edition Sneaker</h4>
-                    <span class="current-price">$125</span> x
-                    <span class="items-bought">3</span>
-                    <span class="final-price">&dollar;375.00</span>
-                    <img
-                      src="images/icon-delete.svg"
-                      alt="delete icon"
-                      class="delete-icon"
-                    />
-                  </div>
-                </div>
+                
                 <button class="checkout" id="checkout">Checkout</button>
               </div>
             </div>
@@ -229,7 +212,7 @@
         <div class="product-counter">
           <div class="inc-dec">
             <span class="subtract counter-span" id="subtract">-</span>
-            <span class="count counter-span" id="count-items">0</span>
+            <span class="count counter-span" id="count-pairs"></span>
             <span class="add counter-span" id="add">+</span>
           </div>
           <button class="add-to-cart" id="add-to-cart">
@@ -248,6 +231,7 @@
         </div>
       </section>
     </main>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/cart.js"></script>
   </body>
 </html>
