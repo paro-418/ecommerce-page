@@ -118,15 +118,20 @@ const changePseudoContent = function () {
   
   cartItemBox.addEventListener("click", function (eleClicked) {
     eleClicked.preventDefault();
-    
+
     // Guard Condition
     if (!eleClicked.target.classList.contains("delete-icon")) return;
-    
+
     eleClicked.target.parentElement.parentElement.remove();
     totalNoOfItemsInCart--;
 
-    totalNoOfItemsInCart === 0 ? isItemsExistInCart = false : isItemsExistInCart = true;
+    totalNoOfItemsInCart === 0
+      ? (isItemsExistInCart = false)
+      : (isItemsExistInCart = true);
 
     // changing class of inside-cart element
     changeInsideCartClass(isItemsExistInCart);
-});
+
+    // updating content of pseudo element
+    changePseudoContent();
+  });
