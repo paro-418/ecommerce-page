@@ -105,23 +105,28 @@ addToCartBtn.addEventListener("click", function (e) {
 const changePseudoContent = function () {
   // changing opacity of pseudo element
   totalNoOfItemsInCart == 0
-    ? document.documentElement.style.setProperty("--pseudo-opacity", "0")
-    : document.documentElement.style.setProperty("--pseudo-opacity", "1");
-
+  ? document.documentElement.style.setProperty("--pseudo-opacity", "0")
+  : document.documentElement.style.setProperty("--pseudo-opacity", "1");
+  
   document.documentElement.style.setProperty(
     "--pseudo-content",
     totalNoOfItemsInCart
-  );
-};
+    );
+  };
+  
+  // EVENT LISTENER  TO DELETE ITEMS FROM CART
+  
+  cartItemBox.addEventListener("click", function (eleClicked) {
+    eleClicked.preventDefault();
+    
+    // Guard Condition
+    if (!eleClicked.target.classList.contains("delete-icon")) return;
+    
+    eleClicked.target.parentElement.parentElement.remove();
+    totalNoOfItemsInCart--;
 
-// EVENT LISTENER  TO DELETE ITEMS FROM CART
+    totalNoOfItemsInCart === 0 ? isItemsExistInCart = false : isItemsExistInCart = true;
 
-cartItemBox.addEventListener("click", function (eleClicked) {
-  eleClicked.preventDefault();
-
-  // Guard Condition
-  if (!eleClicked.target.classList.contains("delete-icon")) return;
-
-  eleClicked.target.parentElement.parentElement.remove();
-  totalNoOfItemsInCart--;
+    // changing class of inside-cart element
+    changeInsideCartClass(isItemsExistInCart);
 });
