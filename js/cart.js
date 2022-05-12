@@ -125,7 +125,7 @@ const changePseudoContent = function () {
     eleClicked.target.parentElement.parentElement.remove();
     totalNoOfItemsInCart--;
 
-    totalNoOfItemsInCart === 0
+    totalNoOfItemsInCart == 0
       ? (isItemsExistInCart = false)
       : (isItemsExistInCart = true);
 
