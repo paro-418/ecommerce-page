@@ -27,6 +27,7 @@ const currentPriceEl = document.getElementById("current-price");
 const pairOfShoesEl = document.getElementById("items-bought");
 const finalPriceEl = document.getElementById("finalPrice");
 const cartItemBox = document.getElementById("cart-item-box");
+let deleteIcon;
 
 // EVENT LISTENERS ON MAIN-SECITION-RIGHT ELEMENTS
 
@@ -94,15 +95,8 @@ addToCartBtn.addEventListener("click", function (e) {
     isItemsExistInCart = true;
   }
 
-  const htmlJustInserted = document.querySelector(
-    ".cart-item-info .delete-icon"
-  );
-
   // updating content of pseudo element
   changePseudoContent();
-
-  // adding evetlistener on each created delete icon image
-  addEventInCartItems(htmlJustInserted);
 
   // changing class of inside-cart
   changeInsideCartClass(isItemsExistInCart);
@@ -120,23 +114,14 @@ const changePseudoContent = function () {
   );
 };
 
-// EVENT-LISTENER ON CART IMAGE
+// EVENT LISTENER  TO DELETE ITEMS FROM CART
 
-const addEventInCartItems = function (itemJustInserted) {
-  itemJustInserted.addEventListener("click", function (e) {
-    e.preventDefault();
-    const toBeDeleted = this.parentElement.parentElement;
-    toBeDeleted.remove(); // removing items from cart
+cartItemBox.addEventListener("click", function (eleClicked) {
+  eleClicked.preventDefault();
 
-    // updating no of items present in cart
-    --totalNoOfItemsInCart;
+  // Guard Condition
+  if (!eleClicked.target.classList.contains("delete-icon")) return;
 
-    // updating content of pseudo element
-    changePseudoContent();
-
-    // if no element present in cart then again apply no-items class
-    if (totalNoOfItemsInCart === 0) {
-      changeInsideCartClass(false);
-    }
-  });
-};
+  eleClicked.target.parentElement.parentElement.remove();
+  totalNoOfItemsInCart--;
+});
